@@ -5,6 +5,7 @@ def insecure_input():
     os.system(user_input)  # 🚨 Command injection (critical)
 
 def weak_hash():
-    import hashlib
+    from argon2 import PasswordHasher
     password = "password123"
-    hashed = hashlib.md5(password.encode()).hexdigest()  # 🚨 Weak hash (medium)
+    ph = PasswordHasher()
+    hashed = ph.hash(password)  # ✅ Strong hash using Argon2
