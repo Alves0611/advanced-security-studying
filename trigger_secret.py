@@ -1,4 +1,3 @@
-def leak_secret():
-    aws_key = "AKIAIOSFODNN7EXAMPLE"  # 🚨 Simulated AWS Access Key
-    print("AWS Key:", aws_key)
-
+def leak_pat():
+    token = "ghp_abcdefghijklmnopqrstuvwxyz1234567890ABCD"  # 🚨 Simulated GitHub PAT
+    print(token)
