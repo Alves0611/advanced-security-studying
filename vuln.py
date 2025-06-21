@@ -1,11 +1,10 @@
 import os
+import subprocess
 
-def insecure_input():
+def command_injection():
     user_input = input("Enter a command: ")
-    os.system(user_input)  # 🚨 Command injection (critical)
+    subprocess.call(user_input, shell=True)  # 🚨 Vulnerável a command injection
 
-def weak_hash():
-    from argon2 import PasswordHasher
-    password = "password123"
-    ph = PasswordHasher()
-    hashed = ph.hash(password)  # ✅ Strong hash using Argon2
+def hardcoded_secret():
+    api_key = "sk_test_51H7v2fSgF4y8XX"  # 🚨 Exemplo de segredo hardcoded
+    print("API Key:", api_key)
